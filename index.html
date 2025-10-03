@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinStart - Edukasi Finansial untuk Pemula</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Belajar finansial dari dasar dengan FinStart. Kalkulator investasi, tips budgeting, dan panduan lengkap mengelola keuangan untuk pemula.">
+    <meta name="keywords" content="edukasi finansial, investasi pemula, budgeting, keuangan pribadi, financial literacy">
+    <meta name="author" content="FinStart">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="FinStart - Edukasi Finansial untuk Pemula">
+    <meta property="og:description" content="Platform edukasi finansial terlengkap untuk pemula. Belajar investasi, budgeting, dan mengelola keuangan dengan mudah.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://finstart.id">
+    <meta property="og:image" content="https://finstart.id/assets/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- VanillaTilt -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">FinStart</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="file:///C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/index.html" class="nav-link active">Beranda</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="nav-link">Kursus</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="nav-link">Artikel</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/tentang.html" class="nav-link">Tentang</a>
+    
+                </div>
+                
+                <!-- Dark Mode Toggle & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="/file:///C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/index.html" class="nav-link-mobile active">Beranda</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="nav-link-mobile">Kursus</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="nav-link-mobile">Artikel</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/tentang.html" class="nav-link-mobile">Tentang</a>
+                
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-600/20 to-amber-500/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="hero-content">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="bg-gradient-to-r from-cyan-500 via-purple-600 to-amber-500 bg-clip-text text-transparent">
+                            Mulai Perjalanan
+                        </span>
+                        <br>
+                        <span class="text-gray-800 dark:text-white">Finansialmu</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Belajar mengelola keuangan dari nol hingga mahir. Dengan tools interaktif, panduan lengkap, dan komunitas yang mendukung.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="btn-primary">
+                            <i class="fas fa-play mr-2"></i>
+                            Mulai Belajar
+                        </a>
+                        <a href="/tools.html" class="btn-secondary">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Coba Tools Gratis
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="relative">
+                        <!-- Floating Cards Animation -->
+                        <div class="floating-card card-1">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-arrow-up text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Investasi Bulanan</p>
+                                        <p class="text-2xl font-bold text-green-500">+15.2%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-card card-2">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-piggy-bank text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Dana Darurat</p>
+                                        <p class="text-2xl font-bold text-blue-500">Rp 15M</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-card card-3">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-chart-pie text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Budget Tracking</p>
+                                        <p class="text-2xl font-bold text-purple-500">85%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Kenapa Pilih FinStart?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Platform edukasi finansial terlengkap dengan pendekatan yang mudah dipahami untuk semua kalangan
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="feature-card tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="1000">
+                    <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-1 rounded-2xl">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-calculator text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Tools Interaktif</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                Kalkulator bunga majemuk, simulasi budgeting, dan perencanaan dana darurat yang mudah digunakan.
+                            </p>
+                            <a href="/tools.html" class="text-cyan-500 font-semibold hover:text-cyan-600 transition-colors">
+                                Coba Sekarang <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="feature-card tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="1000">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-600 p-1 rounded-2xl">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Kurikulum Terstruktur</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                Belajar step-by-step dari fondasi hingga strategi investasi lanjutan dengan panduan yang jelas.
+                            </p>
+                            <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="text-purple-500 font-semibold hover:text-purple-600 transition-colors">
+                                Mulai Belajar <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="feature-card tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="1000">
+                    <div class="bg-gradient-to-br from-amber-500 to-orange-600 p-1 rounded-2xl">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-newspaper text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Artikel Terkini</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                Tips dan strategi finansial terbaru yang selalu update mengikuti perkembangan ekonomi.
+                            </p>
+                            <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors">
+                                Baca Artikel <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-cyan-500 via-purple-600 to-amber-500">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div class="stat-item">
+                    <div class="text-5xl font-bold mb-2" data-count="10000">0</div>
+                    <p class="text-xl opacity-90">Pengguna Aktif</p>
+                </div>
+                <div class="stat-item">
+                    <div class="text-5xl font-bold mb-2" data-count="50">0</div>
+                    <p class="text-xl opacity-90">Modul Pembelajaran</p>
+                </div>
+                <div class="stat-item">
+                    <div class="text-5xl font-bold mb-2" data-count="200">0</div>
+                    <p class="text-xl opacity-90">Artikel Edukasi</p>
+                </div>
+                <div class="stat-item">
+                    <div class="text-5xl font-bold mb-2" data-count="95">0</div>
+                    <p class="text-xl opacity-90">Tingkat Kepuasan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Artikel Terbaru</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Tips dan strategi finansial yang bisa langsung diterapkan
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="article-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-piggy-bank text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 text-sm rounded-full">Budgeting</span>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">
+                            Cara Mudah Menabung dengan Metode 50/30/20
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Pelajari strategi budgeting yang terbukti efektif untuk mengatur keuangan bulanan Anda.
+                        </p>
+                        <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="text-cyan-500 font-semibold hover:text-cyan-600 transition-colors">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="article-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 text-sm rounded-full">Investasi</span>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">
+                            Investasi Rp 100 Ribu: Mulai dari Mana?
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Panduan lengkap memulai investasi dengan modal kecil untuk pemula yang ingin mulai berinvestasi.
+                        </p>
+                        <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="text-purple-500 font-semibold hover:text-purple-600 transition-colors">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="article-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="px-3 py-1 bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-300 text-sm rounded-full">Proteksi</span>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">
+                            Dana Darurat: Berapa yang Cukup?
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Menghitung kebutuhan dana darurat yang ideal dan strategi membangunnya secara bertahap.
+                        </p>
+                        <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="btn-primary">
+                    Lihat Semua Artikel <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-800 dark:text-white">
+                    Siap Mengubah Masa Depan Finansialmu?
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    Bergabung dengan ribuan orang yang sudah merasakan manfaat belajar finansial bersama FinStart
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="btn-primary text-lg px-8 py-4">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Mulai Perjalananmu
+                    </a>
+                    <a href="/kontak.html" class="btn-secondary text-lg px-8 py-4">
+                        <i class="fas fa-comments mr-2"></i>
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">FinStart</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Platform edukasi finansial terdepan untuk membantu Anda mencapai kebebasan finansial.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Menu Utama</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/file:///C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/index.html" class="text-gray-400 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="/tools.html" class="text-gray-400 hover:text-white transition-colors">Tools</a></li>
+                        <li><a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="text-gray-400 hover:text-white transition-colors">Kursus</a></li>
+                        <li><a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="text-gray-400 hover:text-white transition-colors">Artikel</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Sumber Daya</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/tentang.html" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="/kontak.html" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Dapatkan tips finansial terbaru langsung di inbox Anda.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Email Anda" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500">
+                        <button type="submit" class="w-full btn-primary">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Berlangganan
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 FinStart. Semua hak dilindungi. Dibuat dengan ❤️ untuk masa depan finansial yang lebih baik.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9817678fc4aadf08',t:'MTc1ODI2NzMwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/tools.js"></script>
+</body>
+</html>

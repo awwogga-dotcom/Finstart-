@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursus Finansial - FinStart</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kursus edukasi finansial terlengkap dari dasar hingga mahir. Belajar investasi, budgeting, dan perencanaan keuangan dengan mentor berpengalaman.">
+    <meta name="keywords" content="kursus finansial, belajar investasi, edukasi keuangan, financial literacy, perencanaan keuangan">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">FinStart</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="file:///C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/index.html" class="nav-link active">Beranda</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="nav-link">Kursus</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="nav-link">Artikel</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/tentang.html" class="nav-link">Tentang</a>
+    
+                </div>
+                
+                <!-- Dark Mode Toggle & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+             <!-- Mobile Menu -->
+             <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="/file:///C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/index.html" class="nav-link-mobile active">Beranda</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/kursus.html" class="nav-link-mobile">Kursus</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/artikel.html" class="nav-link-mobile">Artikel</a>
+                    <a href="/C:/Users/Administrator/Documents/tugas%20web%20ananda%20gautama/tentang.html" class="nav-link-mobile">Tentang</a>
+                
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-cyan-500/10 via-purple-600/10 to-amber-500/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-cyan-500 via-purple-600 to-amber-500 bg-clip-text text-transparent">
+                        Kursus Finansial
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                    Belajar mengelola keuangan dari nol hingga mahir dengan kurikulum terstruktur dan mentor berpengalaman
+                </p>
+                
+                <!-- Course Stats -->
+                <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="text-3xl font-bold text-cyan-500 mb-2">50+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Modul Pembelajaran</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="text-3xl font-bold text-purple-500 mb-2">10K+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Siswa Aktif</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="text-3xl font-bold text-amber-500 mb-2">4.9</div>
+                        <div class="text-gray-600 dark:text-gray-300">Rating Kursus</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="text-3xl font-bold text-green-500 mb-2">95%</div>
+                        <div class="text-gray-600 dark:text-gray-300">Tingkat Kepuasan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-800 dark:text-white">Jalur Pembelajaran</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Pilih jalur yang sesuai dengan level dan tujuan finansial Anda</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Beginner Path -->
+                <div class="course-path-card bg-gradient-to-br from-green-500 to-teal-600 p-1 rounded-3xl">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl h-full">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-seedling text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Pemula</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Untuk yang baru memulai perjalanan finansial</p>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Dasar-dasar keuangan pribadi</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Budgeting dan cash flow</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Dana darurat</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Menabung yang efektif</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-500 mb-2">GRATIS</div>
+                            <button class="btn-primary w-full">
+                                <i class="fas fa-play mr-2"></i>
+                                Mulai Belajar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Path -->
+                <div class="course-path-card bg-gradient-to-br from-purple-500 to-pink-600 p-1 rounded-3xl transform scale-105">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl h-full">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Menengah</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Untuk yang ingin mulai berinvestasi</p>
+                            <div class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-semibold mt-2">
+                                POPULER
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-purple-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Investasi untuk pemula</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-purple-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Reksa dana & saham</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-purple-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Analisis risiko</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-purple-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Portfolio diversifikasi</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-500 mb-2">Rp 299K</div>
+                            <div class="text-sm text-gray-500 line-through mb-2">Rp 499K</div>
+                            <button class="btn-primary w-full">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Mulai Investasi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Path -->
+                <div class="course-path-card bg-gradient-to-br from-amber-500 to-orange-600 p-1 rounded-3xl">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl h-full">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-crown text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Mahir</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Untuk yang ingin menjadi investor profesional</p>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-amber-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Analisis fundamental</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-amber-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Trading strategies</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-amber-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Real estate investment</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-amber-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Tax optimization</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-500 mb-2">Rp 599K</div>
+                            <button class="btn-primary w-full">
+                                <i class="fas fa-star mr-2"></i>
+                                Jadi Expert
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Curriculum -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-800 dark:text-white">Kurikulum Lengkap</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Materi pembelajaran yang terstruktur dan mudah dipahami</p>
+            </div>
+            
+            <!-- Curriculum Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="curriculum-tab active" data-level="beginner">
+                    <i class="fas fa-seedling mr-2"></i>
+                    Pemula
+                </button>
+                <button class="curriculum-tab" data-level="intermediate">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    Menengah
+                </button>
+                <button class="curriculum-tab" data-level="advanced">
+                    <i class="fas fa-crown mr-2"></i>
+                    Mahir
+                </button>
+            </div>
+            
+            <!-- Beginner Curriculum -->
+            <div id="beginner-curriculum" class="curriculum-content active">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Module 1 -->
+                    <div class="module-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white">Mindset Keuangan</h3>
+                                <p class="text-gray-600 dark:text-gray-300">4 Pelajaran • 45 menit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-play-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Mengubah mindset tentang uang</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-play-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Tujuan finansial yang SMART</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-play-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Mengatasi kebiasaan boros</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-file-alt text-gray-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Quiz: Evaluasi mindset</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill bg-green-500" style="width: 100%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                            <span>Progress: 100%</span>
+                            <span>✓ Selesai</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="module-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white">Budgeting Dasar</h3>
+                                <p class="text-gray-600 dark:text-gray-300">6 Pelajaran • 60 menit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-play-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Menghitung income & expenses</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-play-circle text-green-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Metode budgeting 50/30/20</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Tracking pengeluaran</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Tools budgeting digital</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill bg-green-500" style="width: 33%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                            <span>Progress: 33%</span>
+                            <span>🔄 Sedang belajar</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="module-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center">
+                                <span class="text-gray-600 dark:text-gray-400 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-500 dark:text-gray-400">Dana Darurat</h3>
+                                <p class="text-gray-500 dark:text-gray-500">5 Pelajaran • 50 menit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Pentingnya dana darurat</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Menghitung kebutuhan dana darurat</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Strategi membangun dana darurat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill bg-gray-300" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 dark:text-gray-500">
+                            <span>Progress: 0%</span>
+                            <span>🔒 Terkunci</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="module-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center">
+                                <span class="text-gray-600 dark:text-gray-400 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-500 dark:text-gray-400">Menabung Efektif</h3>
+                                <p class="text-gray-500 dark:text-gray-500">4 Pelajaran • 40 menit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Jenis-jenis tabungan</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Otomatisasi tabungan</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-lock text-gray-400"></i>
+                                <span class="text-gray-500 dark:text-gray-500">Tips menabung konsisten</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill bg-gray-300" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 dark:text-gray-500">
+                            <span>Progress: 0%</span>
+                            <span>🔒 Terkunci</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Curriculum -->
+            <div id="intermediate-curriculum" class="curriculum-content hidden">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Advanced modules would go here -->
+                    <div class="col-span-2 text-center py-12">
+                        <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-rocket text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Kurikulum Menengah</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                            Pelajari investasi saham, reksa dana, obligasi, dan strategi diversifikasi portfolio untuk memaksimalkan return investasi Anda.
+                        </p>
+                        <button class="btn-primary">
+                            <i class="fas fa-unlock mr-2"></i>
+                            Buka Akses Penuh
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Curriculum -->
+            <div id="advanced-curriculum" class="curriculum-content hidden">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="col-span-2 text-center py-12">
+                        <div class="w-24 h-24 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-crown text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Kurikulum Mahir</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                            Kuasai analisis fundamental, technical analysis, real estate investment, dan strategi tax optimization untuk menjadi investor profesional.
+                        </p>
+                        <button class="btn-primary">
+                            <i class="fas fa-star mr-2"></i>
+                            Upgrade ke Premium
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-800 dark:text-white">Mentor Berpengalaman</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Belajar langsung dari para ahli finansial terpercaya</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mentor 1 -->
+                <div class="mentor-card bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Dr. Sarah Finansial</h3>
+                    <p class="text-purple-600 dark:text-purple-400 font-semibold mb-4">Senior Financial Advisor</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        15+ tahun pengalaman di industri keuangan. Spesialis dalam perencanaan keuangan personal dan investasi.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span><i class="fas fa-star text-yellow-500 mr-1"></i>4.9</span>
+                        <span><i class="fas fa-users mr-1"></i>3.2K siswa</span>
+                    </div>
+                </div>
+
+                <!-- Mentor 2 -->
+                <div class="mentor-card bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Ahmad Investasi</h3>
+                    <p class="text-purple-600 dark:text-purple-400 font-semibold mb-4">Investment Strategist</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Portfolio manager dengan track record mengelola dana Rp 500M+. Expert dalam analisis saham dan obligasi.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span><i class="fas fa-star text-yellow-500 mr-1"></i>4.8</span>
+                        <span><i class="fas fa-users mr-1"></i>2.8K siswa</span>
+                    </div>
+                </div>
+
+                <!-- Mentor 3 -->
+                <div class="mentor-card bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-24 h-24 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Lisa Budgeting</h3>
+                    <p class="text-purple-600 dark:text-purple-400 font-semibold mb-4">Personal Finance Coach</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Certified Financial Planner yang telah membantu 5000+ orang mencapai kebebasan finansial.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
+                        <span><i class="fas fa-users mr-1"></i>4.1K siswa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-800 dark:text-white">Testimoni Siswa</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Dengar langsung dari mereka yang telah merasakan manfaatnya</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        "Setelah mengikuti kursus FinStart, saya berhasil membangun dana darurat 6 bulan dalam waktu 8 bulan. Materinya sangat praktis dan mudah diterapkan!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Rina Sari</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        "Dulu saya takut investasi, tapi setelah belajar di FinStart, sekarang portfolio saya sudah profit 25% dalam setahun. Terima kasih FinStart!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">B</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Budi Santoso</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        "Kursus yang sangat worth it! Sekarang saya bisa mengatur keuangan dengan baik dan sudah mulai investasi untuk masa depan."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Ani Wijaya</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-cyan-500 via-purple-600 to-amber-500">
+        <div class="container mx-auto px-6 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-6">
+                    Mulai Perjalanan Finansialmu Hari Ini!
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Bergabung dengan ribuan orang yang sudah mengubah hidup mereka melalui edukasi finansial
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg">
+                        <i class="fas fa-play mr-2"></i>
+                        Mulai Kursus Gratis
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors text-lg">
+                        <i class="fas fa-calendar mr-2"></i>
+                        Konsultasi Gratis
+                    </button>
+                </div>
+                
+                <div class="mt-8 flex items-center justify-center space-x-8 text-sm opacity-75">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Akses selamanya</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sertifikat resmi</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users"></i>
+                        <span>Komunitas eksklusif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">FinStart</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Platform edukasi finansial terdepan untuk membantu Anda mencapai kebebasan finansial.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Menu Utama</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/index.html" class="text-gray-400 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="/tools.html" class="text-gray-400 hover:text-white transition-colors">Tools</a></li>
+                        <li><a href="/kursus.html" class="text-gray-400 hover:text-white transition-colors">Kursus</a></li>
+                        <li><a href="/artikel.html" class="text-gray-400 hover:text-white transition-colors">Artikel</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Courses -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Kursus</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kursus Pemula</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kursus Menengah</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kursus Mahir</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sertifikasi</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Dukungan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/tentang.html" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="/kontak.html" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Bantuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 FinStart. Semua hak dilindungi. Dibuat dengan ❤️ untuk masa depan finansial yang lebih baik.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Course functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCurriculumTabs();
+            initializeProgressTracking();
+        });
+
+        function initializeCurriculumTabs() {
+            const tabs = document.querySelectorAll('.curriculum-tab');
+            const contents = document.querySelectorAll('.curriculum-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const level = this.getAttribute('data-level');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    contents.forEach(content => {
+                        if (content.id === level + '-curriculum') {
+                            content.classList.remove('hidden');
+                            content.classList.add('active');
+                        } else {
+                            content.classList.add('hidden');
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        function initializeProgressTracking() {
+            // Simulate progress updates
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        }
+
+        // Module interaction
+        document.querySelectorAll('.module-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const isLocked = this.querySelector('.fa-lock');
+                
+                if (!isLocked) {
+                    // Open module content
+                    showNotification('Membuka modul pembelajaran...', 'info');
+                } else {
+                    showNotification('Selesaikan modul sebelumnya untuk membuka ini', 'error');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .curriculum-tab {
+            @apply px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-semibold;
+        }
+        
+        .curriculum-tab.active {
+            @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white;
+        }
+        
+        .course-path-card {
+            transition: all 0.3s ease;
+        }
+        
+        .course-path-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .module-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mentor-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9817726034ecdf08',t:'MTc1ODI2Nzc1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
